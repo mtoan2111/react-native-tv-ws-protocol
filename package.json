@@ -1,6 +1,6 @@
 {
   "name": "react-native-tv-ws-protocol",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "wrap websocket protocol to control the smart TVs",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -118,7 +118,10 @@
       ]
     }
   },
-  "eslintIgnore": ["node_modules/", "lib/"],
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
@@ -129,6 +132,10 @@
   "@react-native-community/bob": {
     "source": "src",
     "output": "lib",
-    "targets": ["commonjs", "module", "typescript"]
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
   }
 }

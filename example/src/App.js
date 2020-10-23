@@ -9,29 +9,35 @@ export default class App extends React.Component {
 
   componentDidMount() {
     TvWsProtocol.onmessage = (data) => {
-        console.log(data);
-    }
-    TvWsProtocol.create('', {});
+      console.log(data);
+    };
+    TvWsProtocol.create('', {
+      security: true,
+      rejectUnauthorized: true,
+      appName: 'SamsungWebSocketModule',
+    });
   }
 
   onOpenApp = () => {
     TvWsProtocol.send(
-        JSON.stringify({
-          method: 'ms.channel.emit',
-          params: {
-            data: { action_type: 'DEEP_LINK', appId: '111299001912' },
-            event: 'ed.apps.launch',
-            to: 'host',
-          },
-        })
-      );
-  }
+      JSON.stringify({
+        method: 'ms.channel.emit',
+        params: {
+          data: { action_type: 'DEEP_LINK', appId: '111299001912' },
+          event: 'ed.apps.launch',
+          to: 'host',
+        },
+      })
+    );
+  };
 
   render() {
     return (
-      <View style={{paddingVertical: 20}}>
-        <Button onPress={this.onOpenApp} title="Send"/>
+      <View style={{ paddingVertical: 20 }}>
+        <Button onPress={this.onOpenApp} title="Send" />
       </View>
     );
   }
 }
+
+exports.modu;

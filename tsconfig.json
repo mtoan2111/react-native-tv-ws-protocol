@@ -5,6 +5,7 @@
       "react-native-tv-ws-protocol": ["./src/index"]
     },
     "allowUnreachableCode": false,
+    "noImplicitAny": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "importsNotUsedAsValues": "error",

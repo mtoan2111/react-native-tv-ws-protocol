@@ -1,24 +1,36 @@
 import { NativeModules, NativeEventEmitter } from 'react-native';
 
-let onmessage: any;
-const { TvWsProtocol } = NativeModules;
-const nativeEvent = new NativeEventEmitter(TvWsProtocol);
-
-nativeEvent.addListener("message", (data) => {
-  console.log(data);
-  if (typeof onmessage === 'function'){
-    onmessage(data);
-  }
-})
-
-type TvWsProtocolType = {
+class TvWsProtocol {
+  TvWsProtocol: any;
   onmessage: any;
   onconnect: any;
   onerror: any;
-  create(uri: String, options: any): void;
-  send(message: String): void;
-  close(): void;
-};
+  nativeEvent: NativeEventEmitter;
+  constructor() {
+    this.TvWsProtocol = NativeModules.TvWsProtocol;
+    this.nativeEvent = new NativeEventEmitter(this.TvWsProtocol);
+    this.initListener();
+  }
 
+  initListener = () => {
+    this.nativeEvent.addListener('message', (data) => {
+      if (typeof this.onmessage === 'function') {
+        this.onmessage(data);
+      }
+    });
+  };
 
-export default TvWsProtocol as TvWsProtocolType;
+  create = (uri: String, options: any) => {
+    this.TvWsProtocol.create(uri, options);
+  };
+
+  send = (message: String) => {
+    this.TvWsProtocol.send(message);
+  };
+
+  close = () => {
+    this.TvWsProtocol.close();
+  };
+}
+
+export default new TvWsProtocol();
