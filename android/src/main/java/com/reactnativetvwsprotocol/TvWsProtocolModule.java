@@ -40,7 +40,9 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
             data = this.appName.getBytes("UTF-8");
             this.appName_b64 = Base64.encodeToString(data, Base64.NO_WRAP);
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            WritableMap params = Arguments.createMap();
+            params.putString("error", e.getMessage());
+            sendEvent("error", params);
         }
     }
 
@@ -65,7 +67,9 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
                 this.appName_b64 = Base64.encodeToString(data, Base64.NO_WRAP);
             }
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            WritableMap params = Arguments.createMap();
+            params.putString("error", e.getMessage());
+            sendEvent("error", params);
         }
     }
 
@@ -104,7 +108,7 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
                        Log.d("DEBUG_WS", String.valueOf(headers.get(i)));
                     }
                     params.putString("message", "connected");
-                    sendEvent("message", params);
+                    sendEvent("connect", params);
                 }
             });
             this.ws.addListener(new WebSocketAdapter(){
@@ -112,7 +116,7 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
                 public void onDisconnected(WebSocket websocket, WebSocketFrame serverCloseFrame, WebSocketFrame clientCloseFrame, boolean closedByServer) throws Exception {
                     WritableMap params = Arguments.createMap();
                     params.putString("message", "disconnected");
-                    sendEvent("message", params);
+                    sendEvent("disconnect", params);
                 }
             });
             this.ws.addListener(new WebSocketAdapter(){
@@ -125,9 +129,13 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
             });
             this.ws.connectAsynchronously();
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            WritableMap params = Arguments.createMap();
+            params.putString("error", e.getMessage());
+            sendEvent("error", params);
         } catch (IOException e) {
-            e.printStackTrace();
+            WritableMap params = Arguments.createMap();
+            params.putString("error", e.getMessage());
+            sendEvent("error", params);
         }
     }
 

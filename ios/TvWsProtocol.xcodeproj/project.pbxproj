@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 
 
-		F4FF95D7245B92E800C19C63 /*  TvWsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  TvWsProtocol.swift */; };
-
 		5E555C0D2413F4C50049A1A2 /* TvWsProtocol.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* TvWsProtocol.mm */; };
 /* End PBXBuildFile section */
 
@@ -30,9 +28,8 @@
 		134814201AA4EA6300B7C361 /* libTvWsProtocol.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTvWsProtocol.a; sourceTree = BUILT_PRODUCTS_DIR; };
 
 
-		B3E7B5891CC2AC0600A0062D /* TvWsProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TvWsProtocol.m; sourceTree = "<group>"; };
-		F4FF95D5245B92E700C19C63 /* TvWsProtocol-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TvWsProtocol-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* TvWsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvWsProtocol.swift; sourceTree = "<group>"; };
+		B3E7B5881CC2AC0600A0062D /* TvWsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvWsProtocol.h; sourceTree = "<group>"; };
+		B3E7B5891CC2AC0600A0062D /* TvWsProtocol.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TvWsProtocol.mm; sourceTree = "<group>"; };
 
 /* End PBXFileReference section */
 
@@ -60,9 +57,8 @@
 			children = (
 
 
-				F4FF95D6245B92E800C19C63 /* TvWsProtocol.swift */,
-				B3E7B5891CC2AC0600A0062D /* TvWsProtocol.m */,
-				F4FF95D5245B92E700C19C63 /* TvWsProtocol-Bridging-Header.h */,
+				B3E7B5881CC2AC0600A0062D /* TvWsProtocol.h */,
+				B3E7B5891CC2AC0600A0062D /* TvWsProtocol.mm */,
 
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
@@ -127,8 +123,7 @@
 			files = (
 
 
-				F4FF95D7245B92E800C19C63 /* TvWsProtocol.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* TvWsProtocol.m in Sources */,
+				5E555C0D2413F4C50049A1A2 /* TvWsProtocol.mm in Sources */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,10 +238,6 @@
 				PRODUCT_NAME = TvWsProtocol;
 				SKIP_INSTALL = YES;
 
-				SWIFT_OBJC_BRIDGING_HEADER = "TvWsProtocol-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-
 			};
 			name = Debug;
 		};
@@ -263,9 +254,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TvWsProtocol;
 				SKIP_INSTALL = YES;
-
-				SWIFT_OBJC_BRIDGING_HEADER = "TvWsProtocol-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
 
 			};
 			name = Release;
