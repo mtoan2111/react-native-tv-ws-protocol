@@ -1,6 +1,6 @@
 # react-native-tv-ws-protocol
 
-wrap websocket protocol to control the smart TVs.
+wrap websocket protocol to control the smart TVs
 
 ## Installation
 
