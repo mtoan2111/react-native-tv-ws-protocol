@@ -1,18 +1,16 @@
-#import "TvWsProtocol.h"
+//
+//  TvWsProtocol.m
+//  TvWsProtocol
+//
+//  Created by Nguyễn Mạnh Toàn on 10/24/20.
+//  Copyright © 2020 Facebook. All rights reserved.
+//
 
-@implementation TvWsProtocol
+#import <React/RCTBridgeModule.h>
 
-RCT_EXPORT_MODULE()
+@interface RCT_EXTERN_MODULE(TvWsProtocol, NSObject)
 
-// Example method
-// See // https://facebook.github.io/react-native/docs/native-modules-ios
-RCT_REMAP_METHOD(multiply,
-                 multiplyWithA:(nonnull NSNumber*)a withB:(nonnull NSNumber*)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
-{
-  NSNumber *result = @([a floatValue] * [b floatValue]);
-  resolve(result);
-}
+RCT_EXTERN_METHOD(create:(NSString *)uri options:(NSDictionary *)options)
 
 @end
+
