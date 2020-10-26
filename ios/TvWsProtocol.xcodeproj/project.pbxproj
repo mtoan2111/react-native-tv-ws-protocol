@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83869427BED0F7234EA96611 /* Pods_TvWsProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC4049DD41F1E9D1B05232BF /* Pods_TvWsProtocol.framework */; };
-		8B87A1012543D64A00285E80 /* TvWsProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B87A1002543D64A00285E80 /* TvWsProtocol.m */; };
-		8B87A1582543E3D300285E80 /* jetfire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B87A1572543E3D300285E80 /* jetfire.framework */; };
-		8B87A16925466F5100285E80 /* TvWsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87A16825466F5100285E80 /* TvWsProtocol.swift */; };
-		8B87A16D25466FDA00285E80 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 8B87A16C25466FDA00285E80 /* Starscream */; };
+
+
+		F4FF95D7245B92E800C19C63 /*  TvWsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  TvWsProtocol.swift */; };
+
+		5E555C0D2413F4C50049A1A2 /* TvWsProtocol.mm in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* TvWsProtocol.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,14 +28,12 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libTvWsProtocol.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTvWsProtocol.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		57E8B75B936B4010CDC30F39 /* Pods-TvWsProtocol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvWsProtocol.debug.xcconfig"; path = "Target Support Files/Pods-TvWsProtocol/Pods-TvWsProtocol.debug.xcconfig"; sourceTree = "<group>"; };
-		7171A8BA04D8E1C755D5AB01 /* Pods-TvWsProtocol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvWsProtocol.release.xcconfig"; path = "Target Support Files/Pods-TvWsProtocol/Pods-TvWsProtocol.release.xcconfig"; sourceTree = "<group>"; };
-		8B87A1002543D64A00285E80 /* TvWsProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TvWsProtocol.m; sourceTree = "<group>"; };
-		8B87A1572543E3D300285E80 /* jetfire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = jetfire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B87A16725466F5000285E80 /* TvWsProtocol-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TvWsProtocol-Bridging-Header.h"; sourceTree = "<group>"; };
-		8B87A16825466F5100285E80 /* TvWsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvWsProtocol.swift; sourceTree = "<group>"; };
-		B3E7B5881CC2AC0600A0062D /* TvWsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvWsProtocol.h; sourceTree = "<group>"; };
-		DC4049DD41F1E9D1B05232BF /* Pods_TvWsProtocol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TvWsProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
+
+		B3E7B5891CC2AC0600A0062D /* TvWsProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TvWsProtocol.m; sourceTree = "<group>"; };
+		F4FF95D5245B92E700C19C63 /* TvWsProtocol-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TvWsProtocol-Bridging-Header.h"; sourceTree = "<group>"; };
+		F4FF95D6245B92E800C19C63 /* TvWsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvWsProtocol.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,9 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B87A1582543E3D300285E80 /* jetfire.framework in Frameworks */,
-				83869427BED0F7234EA96611 /* Pods_TvWsProtocol.framework in Frameworks */,
-				8B87A16D25466FDA00285E80 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,35 +55,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32A36F38DF42B8F65FA22E72 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8B87A1572543E3D300285E80 /* jetfire.framework */,
-				DC4049DD41F1E9D1B05232BF /* Pods_TvWsProtocol.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				8B87A16825466F5100285E80 /* TvWsProtocol.swift */,
-				8B87A1002543D64A00285E80 /* TvWsProtocol.m */,
-				B3E7B5881CC2AC0600A0062D /* TvWsProtocol.h */,
+
+
+				F4FF95D6245B92E800C19C63 /* TvWsProtocol.swift */,
+				B3E7B5891CC2AC0600A0062D /* TvWsProtocol.m */,
+				F4FF95D5245B92E700C19C63 /* TvWsProtocol-Bridging-Header.h */,
+
 				134814211AA4EA7D00B7C361 /* Products */,
-				D7C9A641B55CC6AFAD04E8E0 /* Pods */,
-				32A36F38DF42B8F65FA22E72 /* Frameworks */,
-				8B87A16725466F5000285E80 /* TvWsProtocol-Bridging-Header.h */,
 			);
-			sourceTree = "<group>";
-		};
-		D7C9A641B55CC6AFAD04E8E0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				57E8B75B936B4010CDC30F39 /* Pods-TvWsProtocol.debug.xcconfig */,
-				7171A8BA04D8E1C755D5AB01 /* Pods-TvWsProtocol.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,7 +75,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "TvWsProtocol" */;
 			buildPhases = (
-				D610601AC9D61BB7A22B9D19 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -108,9 +84,6 @@
 			dependencies = (
 			);
 			name = TvWsProtocol;
-			packageProductDependencies = (
-				8B87A16C25466FDA00285E80 /* Starscream */,
-			);
 			productName = RCTDataManager;
 			productReference = 134814201AA4EA6300B7C361 /* libTvWsProtocol.a */;
 			productType = "com.apple.product-type.library.static";
@@ -126,7 +99,6 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -139,9 +111,6 @@
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
-			packageReferences = (
-				8B87A16B25466FDA00285E80 /* XCRemoteSwiftPackageReference "Starscream" */,
-			);
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
 			projectRoot = "";
@@ -151,38 +120,16 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		D610601AC9D61BB7A22B9D19 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TvWsProtocol-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B87A1012543D64A00285E80 /* TvWsProtocol.m in Sources */,
-				8B87A16925466F5100285E80 /* TvWsProtocol.swift in Sources */,
+
+
+				F4FF95D7245B92E800C19C63 /* TvWsProtocol.swift in Sources */,
+				B3E7B58A1CC2AC0600A0062D /* TvWsProtocol.m in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +179,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -275,7 +222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -284,52 +231,42 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57E8B75B936B4010CDC30F39 /* Pods-TvWsProtocol.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TvWsProtocol;
 				SKIP_INSTALL = YES;
+
 				SWIFT_OBJC_BRIDGING_HEADER = "TvWsProtocol-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7171A8BA04D8E1C755D5AB01 /* Pods-TvWsProtocol.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TvWsProtocol;
 				SKIP_INSTALL = YES;
+
 				SWIFT_OBJC_BRIDGING_HEADER = "TvWsProtocol-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+
 			};
 			name = Release;
 		};
@@ -355,25 +292,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		8B87A16B25466FDA00285E80 /* XCRemoteSwiftPackageReference "Starscream" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daltoniam/Starscream";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		8B87A16C25466FDA00285E80 /* Starscream */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8B87A16B25466FDA00285E80 /* XCRemoteSwiftPackageReference "Starscream" */;
-			productName = Starscream;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 58B511D31A9E6C8500147676 /* Project object */;
 }

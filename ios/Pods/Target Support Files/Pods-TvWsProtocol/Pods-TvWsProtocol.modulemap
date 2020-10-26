@@ -1,6 +1,0 @@
-framework module Pods_TvWsProtocol {
-  umbrella header "Pods-TvWsProtocol-umbrella.h"
-
-  export *
-  module * { export * }
-}
