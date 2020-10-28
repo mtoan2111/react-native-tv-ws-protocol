@@ -31,7 +31,7 @@ Once imported, you can open a connection to your WebSocket server.
     TvWsProtocol.create('http://localhost:8080');
 ```
 
-After you are connected, there is either a delegate or closure you can use for process WebSocket events.
+After you are connected, there is either a pack of events that you can use for process WebSocket events.
 
 ### Receiving data from a WebSocket
 ```js
@@ -43,8 +43,6 @@ After you are connected, there is either a delegate or closure you can use for p
 ### Writing to a WebSocket
 
 ### write a string frame
-
-The writeString method is the same as writeData, but sends text/string.
 
 ```js
     TvWsProtocol.send(
