@@ -10,6 +10,8 @@ import Foundation
 class TvWsProtocol: RCTEventEmitter, WebSocketDelegate {
     var socket: WebSocket!
     var isConnected = false
+    var appName = "Kbee SmartHome"
+    var appName_b64: Data!
     
     override func supportedEvents() -> [String]! {
         return ["message", "connect", "disconnect", "error"]
@@ -48,10 +50,19 @@ class TvWsProtocol: RCTEventEmitter, WebSocketDelegate {
     
     @objc(create:options:)
     func create(uri: String, options: Dictionary<String, Any>) {
-        var request = URLRequest(url: URL(string: "http://localhost:8080")!)
+        var url = uri
+        if url.isEmpty {
+            url = "ws://localhost:8080"
+        }
+        var request = URLRequest(url: URL(string: url)!)
         request.timeoutInterval = 5
-        let pinned = FoundationSecurity(allowSelfSigned: true)
-        socket = WebSocket(request: request, certPinner: pinned)
+        if options["rejectUnauthorized"] != nil && options["rejectUnauthorized"] as? Bool == false {
+            let pinned = FoundationSecurity(allowSelfSigned: true)
+            socket = WebSocket(request: request, certPinner: pinned)
+        }
+        else {
+            socket = WebSocket(request: request)
+        }
         socket.delegate = self
         socket.connect()
     }
@@ -78,5 +89,9 @@ class TvWsProtocol: RCTEventEmitter, WebSocketDelegate {
             print("websocket encountered an error")
             sendEvent(withName: "error", body: "unknown error")
        }
-   }
+    }
+    
+    func updateAppNameBase64(string: String){
+        self.appName_b64 = string.data(using: .utf8)
+    }
 }

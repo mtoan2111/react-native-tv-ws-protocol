@@ -11,10 +11,8 @@ export default class App extends React.Component {
     TvWsProtocol.onmessage = (data) => {
       console.log(data);
     };
-    TvWsProtocol.create('', {
-      security: true,
-      rejectUnauthorized: true,
-      appName: 'SamsungWebSocketModule',
+    TvWsProtocol.create('wss://192.168.0.2:8002/api/v2/channels/samsung.remote.control?name=S2JlZSBTbWFydCBTb2x1dGlvbnM=', {
+      rejectUnauthorized: false,
     });
   }
 
