@@ -29,21 +29,10 @@ import javax.net.ssl.SSLContext;
 
 public class TvWsProtocolModule extends ReactContextBaseJavaModule {
     private static ReactApplicationContext reactcontext;
-    private String appName = "SamsungWebSocketModule";
-    private String appName_b64;
     private WebSocket ws = null;
     public TvWsProtocolModule(ReactApplicationContext context){
         super(context);
         reactcontext = context;
-        byte[] data = new byte[0];
-        try {
-            data = this.appName.getBytes("UTF-8");
-            this.appName_b64 = Base64.encodeToString(data, Base64.NO_WRAP);
-        } catch (UnsupportedEncodingException e) {
-            WritableMap params = Arguments.createMap();
-            params.putString("error", e.getMessage());
-            sendEvent("error", params);
-        }
     }
 
     @NonNull
@@ -58,38 +47,20 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
             .emit(eventName, params);
     }
 
-    private void updateAppNameBase64(String appName){
-        try {
-            if (appName != ""){
-                this.appName = appName;
-                byte[] data = new byte[0];
-                data = this.appName.getBytes("UTF-8");
-                this.appName_b64 = Base64.encodeToString(data, Base64.NO_WRAP);
-            }
-        } catch (UnsupportedEncodingException e) {
-            WritableMap params = Arguments.createMap();
-            params.putString("error", e.getMessage());
-            sendEvent("error", params);
-        }
-    }
-
     @ReactMethod
     public void create(String uri, ReadableMap options, Promise promise){
         WebSocketFactory factory = new WebSocketFactory();
         try {
             if (options.hasKey("rejectUnauthorized")){
-                if (options.getBoolean("rejectUnauthorized")){
+                if (!options.getBoolean("rejectUnauthorized")){
                     SSLContext context = NaiveSSLContext.getInstance("SSL");
                     factory.setSSLContext(context);
                     factory.setVerifyHostname(false);
                 }
             }
-            if (options.hasKey("appName")){
-                this.updateAppNameBase64(options.getString("appName"));
-            }
 
             if (uri == ""){
-                uri ="wss://192.168.0.2:8002/api/v2/channels/samsung.remote.control?name=" + this.appName_b64;
+                uri ="ws://localhost:8080";
             }
             this.ws = factory.createSocket(uri, 3000);
             this.ws.addListener(new WebSocketAdapter(){
