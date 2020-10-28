@@ -12,9 +12,7 @@ export default class App extends React.Component {
       console.log(data);
     };
     TvWsProtocol.create('', {
-      security: true,
       rejectUnauthorized: true,
-      appName: 'SamsungWebSocketModule',
     });
   }
 
