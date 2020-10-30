@@ -56,12 +56,14 @@ class TvWsProtocol: RCTEventEmitter, WebSocketDelegate {
         }
         var request = URLRequest(url: URL(string: url)!)
         request.timeoutInterval = 5
-        if options["rejectUnauthorized"] != nil && options["rejectUnauthorized"] as? Bool == false {
-            let pinned = FoundationSecurity(allowSelfSigned: true)
-            socket = WebSocket(request: request, certPinner: pinned)
-        }
-        else {
-            socket = WebSocket(request: request)
+        if options != nil {
+            if options["rejectUnauthorized"] != nil && options["rejectUnauthorized"] as? Bool == false {
+                let pinned = FoundationSecurity(allowSelfSigned: true)
+                socket = WebSocket(request: request, certPinner: pinned)
+            }
+            else {
+                socket = WebSocket(request: request)
+            }
         }
         socket.delegate = self
         socket.connect()
