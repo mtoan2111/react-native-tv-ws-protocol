@@ -77,9 +77,6 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
                 @Override
                 public void onConnected(WebSocket websocket, Map<String, List<String>> headers) throws Exception {
                     WritableMap params = Arguments.createMap();
-                    for (int i = 0; i < headers.size(); i++){
-                       Log.d("DEBUG_WS", String.valueOf(headers.get(i)));
-                    }
                     params.putString("message", "connected");
                     sendEvent("connect", params);
                 }
