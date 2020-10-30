@@ -11,7 +11,6 @@
 		8B1B762025483F400048B8B6 /* TvWsProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B761F25483F400048B8B6 /* TvWsProtocol.m */; };
 		8B1B7675254855890048B8B6 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B7674254855890048B8B6 /* WebSocket.swift */; };
 		8B1B7679254855E20048B8B6 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B7678254855E20048B8B6 /* Engine.swift */; };
-		8B1B767C2548560A0048B8B6 /* NativeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B767B2548560A0048B8B6 /* NativeEngine.swift */; };
 		8B1B767F254856240048B8B6 /* WSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B767E254856240048B8B6 /* WSEngine.swift */; };
 		8B1B7682254856570048B8B6 /* FoundationHTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B7681254856570048B8B6 /* FoundationHTTPHandler.swift */; };
 		8B1B76852548568C0048B8B6 /* FoundationHTTPServerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B76842548568C0048B8B6 /* FoundationHTTPServerHandler.swift */; };
@@ -48,7 +47,6 @@
 		8B1B761F25483F400048B8B6 /* TvWsProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TvWsProtocol.m; sourceTree = "<group>"; };
 		8B1B7674254855890048B8B6 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		8B1B7678254855E20048B8B6 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
-		8B1B767B2548560A0048B8B6 /* NativeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeEngine.swift; sourceTree = "<group>"; };
 		8B1B767E254856240048B8B6 /* WSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSEngine.swift; sourceTree = "<group>"; };
 		8B1B7681254856570048B8B6 /* FoundationHTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationHTTPHandler.swift; sourceTree = "<group>"; };
 		8B1B76842548568C0048B8B6 /* FoundationHTTPServerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationHTTPServerHandler.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			children = (
 				8B1B7674254855890048B8B6 /* WebSocket.swift */,
 				8B1B7678254855E20048B8B6 /* Engine.swift */,
-				8B1B767B2548560A0048B8B6 /* NativeEngine.swift */,
 				8B1B767E254856240048B8B6 /* WSEngine.swift */,
 				8B1B7681254856570048B8B6 /* FoundationHTTPHandler.swift */,
 				8B1B76842548568C0048B8B6 /* FoundationHTTPServerHandler.swift */,
@@ -206,7 +203,6 @@
 				8B1B769C254857E10048B8B6 /* Transport.swift in Sources */,
 				8B1B767F254856240048B8B6 /* WSEngine.swift in Sources */,
 				8B1B7679254855E20048B8B6 /* Engine.swift in Sources */,
-				8B1B767C2548560A0048B8B6 /* NativeEngine.swift in Sources */,
 				8B1B7696254857AD0048B8B6 /* FoundationTransport.swift in Sources */,
 				8B1B7675254855890048B8B6 /* WebSocket.swift in Sources */,
 				8B1B762025483F400048B8B6 /* TvWsProtocol.m in Sources */,
