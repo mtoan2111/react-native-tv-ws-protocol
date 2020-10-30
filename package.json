@@ -1,6 +1,6 @@
 {
     "name": "react-native-tv-ws-protocol",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "wrap websocket protocol to control the smart TVs",
     "main": "lib/commonjs/index",
     "module": "lib/module/index",
