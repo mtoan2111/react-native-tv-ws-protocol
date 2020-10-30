@@ -51,11 +51,13 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
     public void create(String uri, ReadableMap options, Promise promise){
         WebSocketFactory factory = new WebSocketFactory();
         try {
-            if (options.hasKey("rejectUnauthorized")){
-                if (!options.getBoolean("rejectUnauthorized")){
+            if (options != null){
+                if (options.hasKey("rejectUnauthorized")){
+                    if (!options.getBoolean("rejectUnauthorized")){
                     SSLContext context = NaiveSSLContext.getInstance("SSL");
                     factory.setSSLContext(context);
                     factory.setVerifyHostname(false);
+                    }
                 }
             }
 
