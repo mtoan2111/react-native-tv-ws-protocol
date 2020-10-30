@@ -100,7 +100,7 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
                       sendEvent("error", params);
                 }
             });
-            this.ws.connectAsynchronously();
+            this.ws.connect();
         } catch (NoSuchAlgorithmException e) {
             WritableMap params = Arguments.createMap();
             params.putString("error", e.getMessage());
@@ -109,6 +109,8 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
             WritableMap params = Arguments.createMap();
             params.putString("error", e.getMessage());
             sendEvent("error", params);
+        } catch (WebSocketException e) {
+          e.printStackTrace();
         }
     }
 
