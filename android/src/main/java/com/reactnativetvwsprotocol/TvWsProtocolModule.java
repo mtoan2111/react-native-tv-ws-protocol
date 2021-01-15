@@ -18,6 +18,7 @@ import com.neovisionaries.ws.client.WebSocketAdapter;
 import com.neovisionaries.ws.client.WebSocketException;
 import com.neovisionaries.ws.client.WebSocketFactory;
 import com.neovisionaries.ws.client.WebSocketFrame;
+import com.neovisionaries.ws.client.WebSocketState;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -120,6 +121,19 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
             WritableMap params = Arguments.createMap();
             params.putString("error", e.getMessage());
             sendEvent("error", params);
+        }
+    }
+
+    @ReactMethod
+    public void isConnected(Promise promise){
+        if (this.ws.getState() == WebSocketState.OPEN){
+            WritableMap param = Arguments.createMap();
+            param.putBoolean("message", true);
+            promise.resolve(param);
+        }else {
+            WritableMap param = Arguments.createMap();
+            param.putBoolean("message", true);
+            promise.reject("error", "web socket has been disconnected");
         }
     }
 
