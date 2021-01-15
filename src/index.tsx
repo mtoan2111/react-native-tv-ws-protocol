@@ -80,6 +80,14 @@ class TvWsProtocol {
         }
     };
 
+    isConnected = () => {
+        try {
+            return this.TvWsProtocol?.isConnected();
+        } catch (err) {
+            this.error(err);
+        }
+    };
+
     close = () => {
         try {
             this.TvWsProtocol.close();
