@@ -107,4 +107,4 @@ class TvWsProtocol {
     };
 }
 
-export default new TvWsProtocol();
+export default TvWsProtocol;
