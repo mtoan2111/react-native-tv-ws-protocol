@@ -108,7 +108,9 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
             params.putString("error", e.getMessage());
             sendEvent("error", params);
         } catch (WebSocketException e) {
-          e.printStackTrace();
+            WritableMap params = Arguments.createMap();
+            params.putString("error", e.getMessage());
+            sendEvent("error", params);
         }
     }
 
@@ -123,6 +125,8 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
             sendEvent("error", params);
         }
     }
+
+    
 
     @ReactMethod
     public void isConnected(Promise promise){
