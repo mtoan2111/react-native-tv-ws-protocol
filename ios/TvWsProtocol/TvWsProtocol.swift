@@ -80,6 +80,20 @@ class TvWsProtocol: RCTEventEmitter, WebSocketDelegate {
         socket.disconnect()
     }
     
+    @objc static override func requiresMainQueueSetup() -> Bool {
+        return false;
+    }
+    
+    @objc(isConnected:rejecter:)
+    func isConnected(resolver: RCTPromiseResolveBlock, rejecter: RCTPromiseRejectBlock) {
+        if (isConnected){
+            resolver(true);
+        }else {
+            let error = NSError(domain: "", code: 200, userInfo: nil)
+            rejecter("Error", "websocket has been disconnected", error);
+        }
+    }
+    
     func handleError(_ error: Error?) {
         if let e = error as? WSError {
             print("websocket encountered an error: \(e.message)")
