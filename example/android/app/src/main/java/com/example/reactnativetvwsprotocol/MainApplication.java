@@ -14,27 +14,26 @@ import java.util.List;
 import com.reactnativetvwsprotocol.TvWsProtocolPackage;
 
 public class MainApplication extends Application implements ReactApplication {
+    private final ReactNativeHost mReactNativeHost =
+        new ReactNativeHost(this) {
+            @Override
+            public boolean getUseDeveloperSupport() {
+            return BuildConfig.DEBUG;
+            }
 
-  private final ReactNativeHost mReactNativeHost =
-      new ReactNativeHost(this) {
-        @Override
-        public boolean getUseDeveloperSupport() {
-          return BuildConfig.DEBUG;
-        }
+            @Override
+            protected List<ReactPackage> getPackages() {
+                @SuppressWarnings("UnnecessaryLocalVariable")
+                List<ReactPackage> packages = new PackageList(this).getPackages();
+                // Packages that cannot be autolinked yet can be added manually here, for TvWsProtocolExample:
+                // packages.add(new MyReactNativePackage());
+                packages.add(new TvWsProtocolPackage());
 
-        @Override
-        protected List<ReactPackage> getPackages() {
-          @SuppressWarnings("UnnecessaryLocalVariable")
-          List<ReactPackage> packages = new PackageList(this).getPackages();
-          // Packages that cannot be autolinked yet can be added manually here, for TvWsProtocolExample:
-          // packages.add(new MyReactNativePackage());
-          packages.add(new TvWsProtocolPackage());
+                return packages;
+            }
 
-          return packages;
-        }
-
-        @Override
-        protected String getJSMainModuleName() {
+            @Override
+protected String getJSMainModuleName() {
           return "index";
         }
       };

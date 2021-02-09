@@ -18,6 +18,7 @@ import com.neovisionaries.ws.client.WebSocketAdapter;
 import com.neovisionaries.ws.client.WebSocketException;
 import com.neovisionaries.ws.client.WebSocketFactory;
 import com.neovisionaries.ws.client.WebSocketFrame;
+import com.neovisionaries.ws.client.WebSocketState;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -77,9 +78,6 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
                 @Override
                 public void onConnected(WebSocket websocket, Map<String, List<String>> headers) throws Exception {
                     WritableMap params = Arguments.createMap();
-                    for (int i = 0; i < headers.size(); i++){
-                       Log.d("DEBUG_WS", String.valueOf(headers.get(i)));
-                    }
                     params.putString("message", "connected");
                     sendEvent("connect", params);
                 }
@@ -100,12 +98,16 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
                       sendEvent("error", params);
                 }
             });
-            this.ws.connectAsynchronously();
+            this.ws.connect();
         } catch (NoSuchAlgorithmException e) {
             WritableMap params = Arguments.createMap();
             params.putString("error", e.getMessage());
             sendEvent("error", params);
         } catch (IOException e) {
+            WritableMap params = Arguments.createMap();
+            params.putString("error", e.getMessage());
+            sendEvent("error", params);
+        } catch (WebSocketException e) {
             WritableMap params = Arguments.createMap();
             params.putString("error", e.getMessage());
             sendEvent("error", params);
@@ -121,6 +123,21 @@ public class TvWsProtocolModule extends ReactContextBaseJavaModule {
             WritableMap params = Arguments.createMap();
             params.putString("error", e.getMessage());
             sendEvent("error", params);
+        }
+    }
+
+    
+
+    @ReactMethod
+    public void isConnected(Promise promise){
+        if (this.ws.getState() == WebSocketState.OPEN){
+            WritableMap param = Arguments.createMap();
+            param.putBoolean("message", true);
+            promise.resolve(param);
+        }else {
+            WritableMap param = Arguments.createMap();
+            param.putBoolean("message", true);
+            promise.reject("error", "web socket has been disconnected");
         }
     }
 
