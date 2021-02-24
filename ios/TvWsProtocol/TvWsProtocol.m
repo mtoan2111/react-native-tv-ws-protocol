@@ -13,6 +13,8 @@ RCT_EXTERN_METHOD(create:(NSString *)uri options:(NSDictionary *)uri )
 
 RCT_EXTERN_METHOD(send:(NSString *)message)
 
+RCT_EXTERN_METHOD(isConnected:(RCTPromiseResolveBlock *)resolver rejector:(RCTPromiseRejectBlock *)rejecter)
+
 RCT_EXTERN_METHOD(close)
 
 @end
