@@ -1,4 +1,4 @@
-import { NativeModules, NativeEventEmitter } from 'react-native';
+import { NativeModules, NativeEventEmitter, TouchableOpacityBase } from 'react-native';
 
 class TvWsProtocol {
     TvWsProtocol: any;
@@ -7,6 +7,7 @@ class TvWsProtocol {
     ondisconnect: any;
     onerror: any;
     nativeEvent: NativeEventEmitter;
+    eventSubscriptions: Array<any> = [];
     constructor() {
         try {
             this.TvWsProtocol = NativeModules.TvWsProtocol;
@@ -20,7 +21,7 @@ class TvWsProtocol {
 
     initListener = () => {
         try {
-            this.nativeEvent.addListener('message', (data) => {
+            let onMessageSubscription = this.nativeEvent.addListener('message', (data) => {
                 try {
                     if (typeof this.onmessage === 'function') {
                         this.onmessage(data);
@@ -30,7 +31,9 @@ class TvWsProtocol {
                 }
             });
 
-            this.nativeEvent.addListener('error', (message) => {
+            this.eventSubscriptions.push(onMessageSubscription);
+
+            let onErrorSubscription = this.nativeEvent.addListener('error', (message) => {
                 try {
                     if (typeof this.onerror === 'function') {
                         this.onerror(message);
@@ -40,7 +43,9 @@ class TvWsProtocol {
                 }
             });
 
-            this.nativeEvent.addListener('disconnect', () => {
+            this.eventSubscriptions.push(onErrorSubscription);
+
+            let onDisconnectSubscription = this.nativeEvent.addListener('disconnect', () => {
                 try {
                     if (typeof this.ondisconnect === 'function') {
                         this.ondisconnect();
@@ -50,7 +55,9 @@ class TvWsProtocol {
                 }
             });
 
-            this.nativeEvent.addListener('connect', () => {
+            this.eventSubscriptions.push(onDisconnectSubscription);
+
+            let onConnectSubscription = this.nativeEvent.addListener('connect', () => {
                 try {
                     if (typeof this.onconnect === 'function') {
                         this.onconnect();
@@ -59,6 +66,8 @@ class TvWsProtocol {
                     this.error(err);
                 }
             });
+
+            this.eventSubscriptions.push(onConnectSubscription);
         } catch (err) {
             this.error(err);
         }
@@ -90,6 +99,9 @@ class TvWsProtocol {
 
     close = () => {
         try {
+            this.eventSubscriptions?.map?.((sub) => {
+                sub?.remove();
+            });
             this.TvWsProtocol.close();
         } catch (err) {
             this.error(err);
