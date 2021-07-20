@@ -1,4 +1,4 @@
-import { NativeModules, NativeEventEmitter, TouchableOpacityBase } from 'react-native';
+import { NativeModules, NativeEventEmitter } from 'react-native';
 
 class TvWsProtocol {
     TvWsProtocol: any;
